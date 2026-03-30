@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Seepia Interactive Website"
+version = "1.0.0"
+id = "artifacts/seepia-website"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 20144
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/seepia-website run dev"
+
+[services.env]
+PORT = "20144"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/seepia-website", "run", "build"]
+publicDir = "artifacts/seepia-website/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

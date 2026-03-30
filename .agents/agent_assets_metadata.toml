@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "fOvJxSEiktXbA9UoZ8GeZ"
+uri = "file://seepia-project.tar.gz"
+type = "unspecified"
+title = "Seepia Website — Full Project Code"
